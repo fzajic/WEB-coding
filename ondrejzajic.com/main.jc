@@ -1,0 +1,97 @@
+pictures = document.getElementsByClassName('pic');
+
+//for(var i = 0; i < pictures.length; i++){
+//    pictures[i].onclick = function(){
+//        console.log(i);
+//        pictures[i].style.width = '500px';
+//        
+//    }
+//}
+var overlay = document.createElement("div");
+overlay.classList.add('overlay');
+overlay.innerHTML = '<span class="close">&times;</span>';
+
+
+var modalActive = false;
+
+for (var i = 0; i < pictures.length; i++) {
+    pictures[i].onclick = (function (i) {
+        return function () {
+            if (modalActive == false) {
+                document.body.appendChild(overlay);
+                pictures[i].classList.toggle('picEnlarged');
+                modalActive = true;
+            } else {
+                pictures[i].classList.remove('picEnlarged');
+                document.body.removeChild(overlay);
+                modalActive = false;
+            }
+
+            overlay.onclick = (function (i) {
+                return function () {
+                    pictures[i].classList.remove('picEnlarged');
+                    document.body.removeChild(overlay);
+                    modalActive = false;
+                };
+            })(i);
+
+        };
+    })(i);
+}
+
+//pictures[0].onclick = function(){
+//    pictures[0].style.width = '500px';
+//}
+//
+//
+//var picture = document.getElementById('chart');
+//
+//picture.onclick = function() {
+//    picture.style.width = '500px';
+//}
+
+
+function setUpCarousel(carouselNr, picAmount, picPath1, picPath2, description, picClass) {
+    //create array with picture paths
+    var pics = new Array();
+    for (var i = 0; i < picAmount; i++) {
+        var img = picPath1 + (i + 1) + picPath2;
+        pics.push(img);
+    }
+    //create 
+    document.getElementById("carouselDescription" + carouselNr).innerHTML = description[0];
+
+    //injecting all thumbnails into html
+    for (var i = 0; i < picAmount; i++) {
+        document.getElementById("carouselThumbnails" + carouselNr).insertAdjacentHTML('beforeend', '<div class="carouselTN TN' + carouselNr + '"><img src="' + pics[i] + '" class="thumbnail tb' + carouselNr + ' noBorder"></div>');
+    }
+    //injecting first picture for detail
+    document.getElementById("viewDetail" + carouselNr).innerHTML = '<img src="' + pics[0] + '" class="fit center carouselPic noBorder ' + picClass + '">';
+
+    //get the thumbnails by class
+    var thumbnails = document.getElementsByClassName("TN" + carouselNr);
+
+    //setting the first thumbnail as selected
+    thumbnails[0].classList.add("selected");
+
+    //changing carousel with click on one of the thumbnails
+    for (var i = 0; i < thumbnails.length; i++) {
+        thumbnails[i].onclick = (function (i) {
+            return function () {
+
+                //changing carousel detail
+                document.getElementById("viewDetail" + carouselNr).innerHTML = '<img src="' + pics[i] + '" class="fit center carouselPic noBorder ' + picClass + '">';
+
+                document.getElementById("carouselDescription" + carouselNr).innerHTML = description[i];
+
+                //changing thumbnails
+                for (var j = 0; j < thumbnails.length; j++) {
+                    thumbnails[j].classList.remove("selected");
+                    console.log(thumbnails);
+                }
+                thumbnails[i].classList.add("selected");
+
+            }
+        })(i);
+    }
+}
