@@ -1,7 +1,38 @@
-body {
-  background: whitesmoke;
-}
+
+
+/*
+#5B8BFF - blue crayola
+E6E8E6 - platinum
+#D81E5B - dogwood red
+*/
+
+/* Global styles
+--------------------------------*/
 
 img {
   width: 300px;
 }
+body {
+  background: #E6E8E6;
+  color: #303030;
+}
+h1{
+  background-color: : #5B8BFF;
+}
+/* profile
+--------------------------------*/
+header{
+  background-color: #3772FF;
+
+}
+
+/* Projects
+--------------------------------*/
+
+
+/* Work Experience
+--------------------------------*/
+
+
+/* Education
+--------------------------------*/
