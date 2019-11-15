@@ -1,9 +1,9 @@
 
 
 /*
-#5B8BFF - blue crayola
-E6E8E6 - platinum
-#D81E5B - dogwood red
+#5B8BFF
+#E6E8E6
+#D81E5B
 */
 
 /* Global styles
@@ -13,26 +13,54 @@ img {
   width: 300px;
 }
 body {
-  background: #E6E8E6;
+  background: #FFF;
   color: #303030;
+  font-family: sans-serif;
 }
-h1{
-  background-color: : #5B8BFF;
+a {
+  color: #5B8BFF;
+}
+a:hover {
+  text-decoration: none;
 }
 /* profile
 --------------------------------*/
 header{
-  background-color: #3772FF;
-
+  background-color: #5B8BFF;
+  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
+
 
 /* Projects
 --------------------------------*/
+.projects{
+  background: #E6E8E6;
+}
+.projects .btn {
+  color: #E6E8E6;
+  background: #2F3061;
+  padding: 8px;
+  border-radius: 4px;
 
+}
 
+.projects .btn:hover {
+  background: rgba(47,48, 97, 80%);
+}
 /* Work Experience
 --------------------------------*/
-
+.work-experience{
+  background: #A1C6D7;
+}
 
 /* Education
 --------------------------------*/
+
+/*
+-------------------------------------*/
+footer {
+  background: #343434;
+}
