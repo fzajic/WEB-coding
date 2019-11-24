@@ -1,0 +1,73 @@
+/*
+#252323 color of text
+#FF4365 color of error
+#4056F4 color of progress
+#00D9C0 color of succes
+#FFFFFF background
+#AF3800 reset color */
+
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #FFF;
+  color: #4353535;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  line-height: 15px;
+  justify-content: center;
+  /* text-align: center; */
+}
+
+header {
+  background-color: #4056F4;
+  padding: 20px;
+  color: #FFF;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 40px;
+  font-size: 50px;
+  line-height: 1em;
+
+}
+header p {
+  margin-bottom: 0px;
+  font-size: 18px;
+}
+
+.origin-wrap {
+  max-width: 700px;
+  width: 85%;
+  margin: 0 auto;
+  /* padding: 60px 0; */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container .detail {
+  font-size: 12px;
+}
+
+.origin-text {
+  margin: 18px, 0;
+  padding: 18px, 18px, 0;
+  background: #ededed;
+  display: block;
+  width: 373px;
+}
+
+.origin-text p {
+  padding: 10px;
+  display: block;
+
+}
+
+.test-wrapper, #reset {
+  text-align: center;
+}
