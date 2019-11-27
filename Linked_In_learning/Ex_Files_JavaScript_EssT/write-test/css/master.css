@@ -71,3 +71,12 @@ header p {
 .test-wrapper, #reset {
   text-align: center;
 }
+
+.stats p {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.content-wrap {
+  text-align: center;
+}
